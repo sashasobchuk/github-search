@@ -1,0 +1,41 @@
+.users {
+  background-color: aqua;
+  text-align: center;
+  position: relative;
+
+
+  .tittle {
+    //background-color: red;
+    font-weight: bolder;
+    margin: 0;
+  }
+
+  .contentContainer {
+    border: black solid 2px;
+
+    .tittle {
+    }
+
+    .searchInput {
+      width: 90%;
+      height: 30px;
+    }
+  }
+}
+.usersContainer{
+  //background-color: red;
+}
+.oneUser{
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  border:black 2px solid;
+  height: 150px;
+
+
+  .avatar{
+
+
+  }
+}
