@@ -1,8 +1,14 @@
 .users {
+  position: relative;
   background-color: aqua;
   text-align: center;
-  position: relative;
-
+  .notfound{
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+  }
 
   .tittle {
     //background-color: red;
@@ -13,29 +19,82 @@
   .contentContainer {
     border: black solid 2px;
 
-    .tittle {
-    }
 
-    .searchInput {
-      width: 90%;
-      height: 30px;
-    }
   }
 }
-.usersContainer{
-  //background-color: red;
-}
-.oneUser{
+
+.preloader{
   position: relative;
-  overflow: hidden;
+  max-width: 100%;
+  contain: content;
+  height: 300px;
   display: flex;
+  justify-content: center;
+  margin: 25px;
+}
+.usersContainer {
+  //background-color: red;
+
+}
+//
+.searchInput {
+  margin: 2px;
+  text-align: center;
+  width: 90%;
+  height: 60px;
+  background-color: transparent;
+  font-size: 25px;
+}
+
+.oneUser {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
   width: 100%;
-  border:black 2px solid;
+  border: black 2px solid;
   height: 150px;
 
+  .left,.rigth {
+    display: flex;
+  }
 
-  .avatar{
 
 
+  .avatar {
+    border: black 2px solid;
+    margin: 2px;
+    border-radius: 4px;
+
+  }
+
+  .repos, .login {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+  }
+  .repos{
+    margin-right: 20px;
+  }
+
+  .login {
+    margin-left: 10vw;
+  }
+}
+.oneUser:hover{
+  background-color: #488cd7;
+
+}
+@media only screen and (max-width: 768px) {
+  .oneUser {
+    height: 100px;
+  }
+  .login{
+   margin-left: 10px;
+  }
+
+}
+@media only screen and (max-width: 480px) {
+  .oneUser {
+    height: 50px;
   }
 }

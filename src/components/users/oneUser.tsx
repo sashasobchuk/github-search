@@ -1,15 +1,18 @@
 import React from 'react';
 import './users.scss'
+import {UserType} from "../../redux/reducers/typs";
 
-// @ts-ignore
-const   OneUser = ({oneUser}) => {
-    console.log(oneUser)
-
-    // debugger
+const   OneUser = ({oneUser}:{oneUser:UserType}) => {
     return (
         <div className='oneUser'>
-            <img className='avatar' src={oneUser.avatar_url} alt="avatar"/>
-            <div> {oneUser.login}</div>
+            <div className='left'>
+                <img className='avatar' src={oneUser.avatar_url} alt="avatar"/>
+                <div className='login'>{oneUser.login}</div>
+            </div>
+            <div className='rigth'>
+                <div className='repos'>Repo: {oneUser.userPage?.public_repos}</div>
+            </div>
+
 
         </div>
     );

@@ -1,0 +1,87 @@
+.users {
+  position: relative;
+  background-color: aqua;
+  text-align: center;
+}
+.users .notfound {
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+}
+.users .tittle {
+  font-weight: bolder;
+  margin: 0;
+}
+.users .contentContainer {
+  border: black solid 2px;
+}
+
+.preloader {
+  position: relative;
+  max-width: 100%;
+  contain: content;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  margin: 25px;
+}
+
+.searchInput {
+  margin: 2px;
+  text-align: center;
+  width: 90%;
+  height: 60px;
+  background-color: transparent;
+  font-size: 25px;
+}
+
+.oneUser {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: black 2px solid;
+  height: 150px;
+}
+.oneUser .left, .oneUser .rigth {
+  display: flex;
+}
+.oneUser .avatar {
+  border: black 2px solid;
+  margin: 2px;
+  border-radius: 4px;
+}
+.oneUser .repos, .oneUser .login {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+.oneUser .repos {
+  margin-right: 20px;
+}
+.oneUser .login {
+  margin-left: 10vw;
+}
+
+.oneUser:hover {
+  background-color: #488cd7;
+}
+
+@media only screen and (max-width: 768px) {
+  .oneUser {
+    height: 100px;
+  }
+
+  .login {
+    margin-left: 10px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .oneUser {
+    height: 50px;
+  }
+}
+
+/*# sourceMappingURL=users.css.map */

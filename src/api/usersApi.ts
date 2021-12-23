@@ -21,32 +21,49 @@ export const getUsers = async (name:string,size=3) => {
     }
     catch (e) {
         errorReporte('problem in  deleteItemAPI', e)
+        return null
     }
 }
-export const findUsers = async (name:string,size=3) => {
+export const findUsers = async (name:string,size:number,page:number) => {
     try {
-        return await instanse.get(`search/users?per_page=${size}&q=${name}`,
+        return await instanse.get(`search/users?per_page=${size}&q=${name}&page=${page}`,
         )
     }
     catch (e) {
         errorReporte('problem in  deleteItemAPI', e)
+        return null
     }
 }
 
 export const getUserPage = async (url:string) => {
-    // debugger
     try {
         return await axios.get(url)
     }
     catch (e) {
         errorReporte('problem in  deleteItemAPI', e)
+        return null
+    }
+}
+export const getUserRepos = async (userName:string,repoName:string,count:number,page:number) => {
+    try {
+        return await instanse.get(`search/repositories?q=${repoName.length ? repoName :''}${!!userName && ('+user:'+userName)}${!!page ? '&page='+page : ''}${count && '&per_page='+count}`)
+    }
+    catch (e) {
+        errorReporte('problem in  deleteItemAPI', e)
+        return null
+    }
+}
+export const getOneUser = async (id:string) => {
+    try {
+        return await instanse.get(`user/${id}`)
+    }
+    catch (e) {
+        errorReporte('problem in  deleteItemAPI', e)
+        return null
     }
 }
 
 
-
-
-export {}
 
 
 

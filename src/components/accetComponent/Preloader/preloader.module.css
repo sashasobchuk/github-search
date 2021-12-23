@@ -1,0 +1,20 @@
+
+
+
+.container{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    position:absolute;
+    height:100%;
+    max-width: 500px;
+    background-color:transparent
+}
+.img{
+    height: 100%;
+    object-fit: contain;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+
