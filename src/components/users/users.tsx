@@ -59,7 +59,7 @@ const Users = () => {
                     onChange={changeSearchString}
                     value={searchUserValue}
                 />
-                {(!loading
+                {(!loading)
                         ? <div className='usersContainer'>
                             <div style={{fontSize:'20px'}}>Total counts :{total_count}</div>
                             <label htmlFor='number' style={{fontSize:'20px'}}>Max total count on page:{userItemsCount}</label>
@@ -78,12 +78,9 @@ const Users = () => {
                             {localLoader && <div className='preloader'><Preloader/></div>}
 
                             <div style={{margin: '20px'}} id='loading'> </div>
-
                         </div>
                         : <div className='preloader'><Preloader/></div>
-                )}
-
-
+                }
             </div>
 
         </div>

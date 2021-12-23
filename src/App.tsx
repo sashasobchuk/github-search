@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.scss';
 import Users from "./components/users/users";
-import {BrowserRouter, Route, Routes, NavLink, HashRouter} from 'react-router-dom'
+import { Route, Routes, NavLink, HashRouter} from 'react-router-dom'
 import User from "./components/user/user";
 
 function App() {
     return (<div>
-
             <HashRouter>
                 <NavLink to='/'>
                     <h1 className='tittle'>GitHub Searcher</h1>

@@ -58,15 +58,16 @@
   position: relative;
   width: 150px;
 }
-.userContainer .repo .center > a {
+.userContainer .repo .center > * {
   text-decoration: none;
   color: black;
   border: black solid 1px;
   padding: 10px;
   border-radius: 10px;
   z-index: 1;
+  cursor: pointer;
 }
-.userContainer .repo .center > a:hover {
+.userContainer .repo .center > *:hover {
   background-color: aqua;
 }
 .userContainer .repo:hover {
@@ -75,7 +76,7 @@
 }
 
 #innerA {
-  position: absolute;
+  position: absolute !important;
   height: 100%;
   width: auto;
 }

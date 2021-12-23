@@ -16,7 +16,7 @@ export const useLoadingMore =(deps:Array<any> |null,loading:boolean |null,onToLo
 
     let    handleIntersect = (entries:any, ) => {
         entries.forEach((entry:any) => {
-            console.log('scroll work');
+            // console.log('scroll work');
             if (entry.intersectionRatio > 0) {
                 onToLoad()
             }

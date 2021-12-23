@@ -75,15 +75,16 @@
       align-items: center;
       position: relative;
       width: 150px;
-      >a{
+      >*{
         text-decoration: none;
         color: black;
         border: black solid 1px;
         padding: 10px;
         border-radius: 10px;
         z-index: 1;
+        cursor: pointer;
       }
-      >a:hover{
+      >*:hover{
       background-color: aqua;
     }
     }
@@ -96,8 +97,9 @@
 
 
 }
-#innerA{
-  position: absolute;
+#innerA {
+  //display: none;
+  position: absolute!important;
   height: 100%;
   width: auto;
 }

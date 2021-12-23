@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import './user.scss'
-import {useParams} from 'react-router-dom';
+import {Link, NavLink, useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../redux/core";
 import {repoType, UserType} from "../../redux/reducers/typs";
@@ -13,18 +13,25 @@ import {Preloader} from "../accetComponent/Preloader/preloader";
 const User = () => {
     let {id} = useParams();
 
-    const user: UserType = useSelector((state: AppStateType) => state.usersPage.users.filter((item: UserType) => {
+    const user: UserType = useSelector((state: AppStateType) =>
+        state.usersPage.users.filter((item: UserType) => {
         return (String(item.id) === id)
     }))[0]
     const localLoader = useSelector((state: AppStateType) => state.usersPage.loacalLoader)
     const loading = useSelector((state: AppStateType) => state.usersPage.loadingUsersPage)
     const repoItemsCount = useSelector((state: AppStateType) => state.usersPage.repoItemsCount)
     const repoItemsPage = useSelector((state: AppStateType) => state.usersPage.repoItemsPage)
-
-
     const [searchText, setSearchText]:[string,Function] = useState('');
-
     const dispatch = useDispatch()
+    const myA = (e:any,href:any) => {
+        e.preventDefault()
+        let  tag = document.createElement("a");
+        tag.href=href
+        tag.target='_blank'
+        tag.rel='noreferrer'
+        document.body.appendChild(tag);
+        tag.click()
+    }
     useEffect(() => {
         if (!!user) {
             dispatch(loadUserRepos(String(user.userPage.login), String(id), searchText, repoItemsCount, repoItemsPage))
@@ -49,6 +56,9 @@ const User = () => {
 
     }, [searchText, repoItemsCount, repoItemsPage])
     useLoadingMore(user?.userRepos, loading, () => (dispatch(setReposNumber(repoItemsCount + 3))),)
+
+
+
     return (
         user
             ? <div className='userContainer'>
@@ -102,7 +112,9 @@ const User = () => {
                                 <div className="left">{item.name} </div>
                                 {item.deployUrl &&
                                 <div className='center'>
-                                    <a id='innerA' rel='noreferrer' target='_blank' href={item.deployUrl}> go to site</a>
+                                    {/*<a  key={item.id+'a'} id='innerA' rel='noreferrer' target='_blank' href={item.deployUrl}> go to site</a>*/}
+                                    <span onClick={e=>myA(e,item.deployUrl)}  id='innerA'> go to site</span>
+
                                 </div>}
                                 <div className="right">
                                     <div>{item.forks} Forks</div>
