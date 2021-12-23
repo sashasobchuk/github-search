@@ -110,12 +110,12 @@ const User = () => {
                         return (
                             <a rel='noreferrer' target='_blank' key={item.id} href={item.html_url} className='repo'>
                                 <div className="left">{item.name} </div>
-                                {item.deployUrl &&
-                                <div className='center'>
-                                    {/*<a  key={item.id+'a'} id='innerA' rel='noreferrer' target='_blank' href={item.deployUrl}> go to site</a>*/}
-                                    <span onClick={e=>myA(e,item.deployUrl)}  id='innerA'> go to site</span>
 
-                                </div>}
+                                <div className='center'>
+                                    <span onClick={(e)=>myA(e,item.tryDeployUrl)}  id='innerATry'>try go to site</span>
+                                    {item.deployUrl &&  <span onClick={(e)=>myA(e,item.deployUrl)}  id='innerA'> go to site</span>}
+                                </div>
+
                                 <div className="right">
                                     <div>{item.forks} Forks</div>
                                     <div>{item.stargazers_count} Stars</div>

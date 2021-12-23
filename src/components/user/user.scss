@@ -72,9 +72,10 @@
     }
     .center{
       display: flex;
-      align-items: center;
-      position: relative;
-      width: 150px;
+      justify-content: flex-start;
+      position: absolute;
+      left: 30%;
+      width: 350px;
       >*{
         text-decoration: none;
         color: black;
@@ -83,6 +84,7 @@
         border-radius: 10px;
         z-index: 1;
         cursor: pointer;
+        margin: 10px;
       }
       >*:hover{
       background-color: aqua;
@@ -97,9 +99,9 @@
 
 
 }
-#innerA {
+#innerA,#innerATry {
   //display: none;
-  position: absolute!important;
+  //position: absolute!important;
   height: 100%;
   width: auto;
 }

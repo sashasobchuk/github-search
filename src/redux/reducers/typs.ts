@@ -114,6 +114,7 @@ export type repoType ={
     watchers: number,
     default_branch: string,
     deployUrl?:string |null |undefined
+    tryDeployUrl?:string
 }
 export type userReposType= Array<repoType>
 

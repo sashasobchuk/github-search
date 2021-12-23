@@ -74,10 +74,14 @@ export function* watchLoadUserRepos() {
     yield takeEvery(LOAD_USER_REPOS, workerLoadUserRepos);
 }
 function makeSiteLink(repos:Array<repoType>,) {
+    debugger
     repos.map((repo:repoType)=>{
         if(repo.default_branch === 'gh-pages') {
             let  [userName,repoName] = repo.full_name.split('/')
             repo.deployUrl = `https://${userName}.github.io/${repoName}`
+        }else {
+            let  [userName,repoName] = repo.full_name.split('/')
+            repo.tryDeployUrl = `https://${userName}.github.io/${repoName}`
         }
         return repo
     })
